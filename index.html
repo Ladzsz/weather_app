@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weather.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <!--header-->
+    <header>
+        <h1>Lad Weather App</h1>
+    </header>
+
+    <!--info text-->
+    <div class="info-text">
+        <h2>Enter your location and get the weather!</h2>
+    </div>
+
+    <!--form area-->
+    <form class="input-form">
+        <legend>Find out the weather below!</legend>
+
+        <fieldset>
+            <label for="location">Location:</label><br>
+            <input type="text" id="location" required placeholder="Enter location here">
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!--weather display area-->
+    <div class="display"></div>
+
+    <!--linking js-->
+    <script src="weather.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+/*styling the html and body*/
+html, body {
+    height: 100%; 
+    margin: 0; 
+    background-color: darkolivegreen;
+    display: flex;
+    flex-direction: column;
+}
+
+/*styling the header*/
+header {
+    background-color: darkolivegreen;
+    padding: 20px;
+    text-align: center;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+header > h1 {
+    color: white;
+}
+
+/*styling info text*/
+.info-text > h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 2%;
+}
+
+/*styling the form*/
+form {
+    text-align: center;
+}
+
+legend {
+    margin-bottom: 2%;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 1%;
+}
+
+input {
+    border-radius: 8px;
+}
+
+/*styling form button*/
+button {
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: gray;
+}
+
+/*stylinng the display area*/
+.display {
+    margin-top: 4%;
+}
