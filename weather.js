@@ -48,14 +48,47 @@ function displayWeather(data) {
     const Date = data.days[0]; // Get the date from days array
     const currentDate = Date.datetime; //get current date
 
-    // Combine the information into one string
-    const info = `Location: ${locationName}.<br><br>
-    Temperature: ${temperature}°C.<br><br>
-    Timezone: ${timezone}.<br><br>
-    Date: ${currentDate}.`;
+    //making fahirenhit temperature
+    const fahrenheitTemperature = (temperature * 9/5) + 32;
 
-    // Select the <p> tag and set its inner HTML to the info
-    document.querySelector('.info').innerHTML = info;
+    // Function to display info in Celsius
+    const showCelsius = () => {
+        const info = `Location: ${locationName}.<br><br>
+        Temperature: ${temperature.toFixed(2)}°C.<br><br>
+        Timezone: ${timezone}.<br><br>
+        Date: ${currentDate}.`;
+        document.querySelector('.info').innerHTML = info;
+    };
+
+    // Function to display info in Fahrenheit
+    const showFahrenheit = () => {
+        const info = `Location: ${locationName}.<br><br>
+        Temperature: ${fahrenheitTemperature.toFixed(2)}°F.<br><br>
+        Timezone: ${timezone}.<br><br>
+        Date: ${currentDate}.`;
+        document.querySelector('.info').innerHTML = info;
+    };
+
+    //event lisetner to make celcius button work
+    document.querySelector('.celcius').addEventListener("click", function(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        //running function on click
+        showCelsius();
+    });
+
+    //event lisetner to make fahrienheit button work
+    document.querySelector('.fahrinehit').addEventListener("click", function(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        //running function on click
+        showFahrenheit();
+    });
+
+    // Initial display in Celsius
+    showCelsius();
 }
 
 //event lisetner to make submit button work
