@@ -13,6 +13,11 @@ async function getLocation(location) {
         // Fetching data from the weather API
         let response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&include=days&key=RCZAKH4C4QRQ2EL87ZHPF7Y5V`);
 
+        //if statement to make sure user enters correct location
+        if (!response.ok) {
+            alert(`"${location}" Invalid. Please enter valid location.`);
+        }
+
         // Parsing response as JSON
         let data = await response.json();
         
