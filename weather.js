@@ -9,13 +9,9 @@ function userInput() {
 
 /// Function to fetch data and pass the user's location to the API
 async function getLocation(location) {
-    //bringin in loading message and display area
-    const loadingMessage = document.querySelector('.loading-message');
-    
 
-    // Show the loading message
-    loadingMessage.style.display = 'block';
-
+    // Select the <p> tag and set its inner HTML to loading 
+    document.querySelector('.info').innerHTML = 'Grabbing Weather...';
 
     //execute try catch to handle the info
     try {
@@ -25,6 +21,7 @@ async function getLocation(location) {
         //if statement to make sure user enters correct location
         if (!response.ok) {
             alert(`"${location}" Invalid. Please enter valid location.`);
+            document.querySelector('.info').innerHTML = '';
         }
 
         // Parsing response as JSON
@@ -38,9 +35,6 @@ async function getLocation(location) {
 
     } catch (error) {
         console.error("Error fetching weather data:", error);
-    } finally {
-        // Hide the loading message
-        loadingMessage.style.display = 'none';
     }
 }
 
@@ -54,11 +48,14 @@ function displayWeather(data) {
     const Date = data.days[0]; // Get the date from days array
     const currentDate = Date.datetime; //get current date
 
-    // Displaying the info to user
-    document.querySelector('.Lname').textContent = `Location: ${locationName}.`;
-    document.querySelector('.Ltemp').textContent = `Temperature: ${temperature}°C.`;
-    document.querySelector('.Ltimezone').textContent = `Timezone: ${timezone}.`;
-    document.querySelector('.Ldate').textContent = `Date: ${currentDate}`;
+    // Combine the information into one string
+    const info = `Location: ${locationName}.<br><br>
+    Temperature: ${temperature}°C.<br><br>
+    Timezone: ${timezone}.<br><br>
+    Date: ${currentDate}.`;
+
+    // Select the <p> tag and set its inner HTML to the info
+    document.querySelector('.info').innerHTML = info;
 }
 
 //event lisetner to make submit button work
