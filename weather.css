@@ -9,7 +9,7 @@ html, body {
 
 /*styling the header*/
 header {
-    background-color: darkolivegreen;
+    background-color: darkslategray;
     padding: 20px;
     text-align: center;
     border-bottom-left-radius: 16px;
@@ -25,15 +25,19 @@ header > h1 {
     text-align: center;
     color: white;
     margin-bottom: 2%;
+    font-weight: bold;
 }
 
 /*styling the form*/
 form {
     text-align: center;
+    margin-top: 2%;
 }
 
-legend {
-    margin-bottom: 2%;
+label {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
 }
 
 fieldset {
@@ -43,6 +47,7 @@ fieldset {
 
 input {
     border-radius: 8px;
+    margin-top: 10px;
 }
 
 /*styling form button*/
@@ -59,4 +64,11 @@ button:hover {
 /*stylinng the display area*/
 .display {
     margin-top: 4%;
+    text-align: center;
+}
+
+.display > p {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
 }

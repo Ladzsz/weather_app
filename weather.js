@@ -38,7 +38,10 @@ function displayWeather(data) {
     const currentDate = Date.datetime; //get current date
 
     // Displaying the info to user
-    document.querySelector('.display').textContent = `Location: ${locationName}\nTemperature: ${temperature}°C\nTimezone: ${timezone}\nDate: ${currentDate}`;
+    document.querySelector('.Lname').textContent = `Location: ${locationName}.`;
+    document.querySelector('.Ltemp').textContent = `Temperature: ${temperature}°C.`;
+    document.querySelector('.Ltimezone').textContent = `Timezone: ${timezone}.`;
+    document.querySelector('.Ldate').textContent = `Date: ${currentDate}`;
 }
 
 //event lisetner to make submit button work
