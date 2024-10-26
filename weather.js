@@ -9,6 +9,15 @@ function userInput() {
 
 /// Function to fetch data and pass the user's location to the API
 async function getLocation(location) {
+    //bringin in loading message and display area
+    const loadingMessage = document.querySelector('.loading-message');
+    
+
+    // Show the loading message
+    loadingMessage.style.display = 'block';
+
+
+    //execute try catch to handle the info
     try {
         // Fetching data from the weather API
         let response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&include=days&key=RCZAKH4C4QRQ2EL87ZHPF7Y5V`);
@@ -29,6 +38,9 @@ async function getLocation(location) {
 
     } catch (error) {
         console.error("Error fetching weather data:", error);
+    } finally {
+        // Hide the loading message
+        loadingMessage.style.display = 'none';
     }
 }
 
